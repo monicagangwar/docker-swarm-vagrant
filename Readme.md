@@ -1,5 +1,8 @@
 #Docker Swarm  
+Sample app for getting started with Docker swarm
+![ezgif-1-66e3c945a9](https://cloud.githubusercontent.com/assets/8946358/23815796/b0fb5c62-060f-11e7-8375-c7352eb327b6.gif)  
 
+> **watch whole demo [here](https://vimeo.com/207867476)**
 
 ##Installation
 Install Vagrant Binary from [here](https://www.vagrantup.com/downloads.html)  
