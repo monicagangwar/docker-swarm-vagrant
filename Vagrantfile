@@ -27,7 +27,12 @@ Vagrant.configure(2) do |config|
       node.vm.box = machine[:box]
       node.vm.hostname = machine[:hostname]
       node.vm.network "private_network", ip: machine[:ip]
-      node.vm.provision "docker" 
+      if machine[:hostname] == "manager"
+        node.vm.provision "docker",
+          images: ["monicagangwar/docker-swarm-vagrant"]
+      else
+        node.vm.provision "docker"
+      end
       node.vm.provider "virtualbox" do |vb|
         vb.customize ["modifyvm", :id, "--memory", machine[:ram]]
       end
