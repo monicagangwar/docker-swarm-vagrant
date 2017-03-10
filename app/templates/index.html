@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Docker</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+  </head>
+  <body> 
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <div class="card text-center">
+          <div class="card-header">
+            <h1 class="display-3">DOCKER SWARM</h1>
+            <p class="lead">This is a sample app to run on docker swarm. This app is being served by different containers on different node</p>
+          </div>
+          <hr>
+          <div class="card-block">
+            <h4 class="card-title">Serving from Docker Container:</h4>
+            <p class="card-text"><mark>{{ container }}</mark></p>
+          </div>
+          <hr>
+          <hr>
+          <hr>
+          <hr>
+          <hr>
+          <div class="card-footer">
+            <img src="{{ url_for('static',filename='card-img.png') }}">
+            <p class="card-text">
+            <a href="https://github.com/monicagangwar"><img src="{{ url_for('static',filename='github.png') }}"></a>
+            <a href="https://twitter.com/monicagangwar"><img src="{{ url_for('static',filename='twitter.png') }}"></a>
+            <a href="https://linkedin.com/in/monicagangwar"><img src="{{ url_for('static',filename='linkedin.png') }}"></a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
