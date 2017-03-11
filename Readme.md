@@ -1,15 +1,26 @@
 #Docker Swarm  
-Sample app for getting started with Docker swarm
+Sample 3 node Vagrant setup for getting started with Docker swarm   
+
+
 ![ezgif-1-66e3c945a9](https://cloud.githubusercontent.com/assets/8946358/23815796/b0fb5c62-060f-11e7-8375-c7352eb327b6.gif)  
 
 > **watch whole demo [here](https://vimeo.com/207867476)**
 
 ##Installation
 Install Vagrant Binary from [here](https://www.vagrantup.com/downloads.html)  
-Download ubuntu/trusty64 box from vagrant using the command `vagrant box add ubuntu/trusty64` 
+Download ubuntu/trusty64 box from vagrant using the command `vagrant box add ubuntu/trusty64`  
+Clone this repo  
+```  
+git clone https://github.com/monicagangwar/docker-swarm-vagrant.git  
+cd docker-swarm-vagrant  
+```
 
 ##Initialize VMs  
 Run `vagrant up`  
+  - This will set up 3 VMs - **manager**, **worker-1** & **worker-2** all provisioned with docker  
+  - manager node also has Flask app image [monicagangwar/docker-swarm-vagrant](https://hub.docker.com/r/monicagangwar/docker-swarm-vagrant/) installed on it.  
+    Which can be run as `docker run -p 8000:8000 --name dsv monicagangwar/docker-swarm-vagrant`  
+
 To ssh into the manager node run `vagrant ssh manager`  
 To ssh into worker node run `vagrant ssh worker-1` or `vagrant ssh worker-2`  
 
