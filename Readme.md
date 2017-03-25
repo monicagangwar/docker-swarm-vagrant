@@ -1,4 +1,4 @@
-#Docker Swarm  
+# Docker Swarm  
 Sample 3 node Vagrant setup for getting started with Docker swarm   
 
 
@@ -6,7 +6,7 @@ Sample 3 node Vagrant setup for getting started with Docker swarm
 
 > **watch whole demo [here](https://vimeo.com/207867476)**
 
-##Installation
+## Installation
 Install Vagrant Binary from [here](https://www.vagrantup.com/downloads.html)  
 Download ubuntu/trusty64 box from vagrant using the command `vagrant box add ubuntu/trusty64`  
 Clone this repo  
@@ -15,7 +15,7 @@ git clone https://github.com/monicagangwar/docker-swarm-vagrant.git
 cd docker-swarm-vagrant  
 ```
 
-##Initialize VMs  
+## Initialize VMs  
 Run `vagrant up`  
   - This will set up 3 VMs - **manager**, **worker-1** & **worker-2** all provisioned with docker  
   - manager node also has Flask app image [monicagangwar/docker-swarm-vagrant](https://hub.docker.com/r/monicagangwar/docker-swarm-vagrant/) installed on it.  
@@ -24,7 +24,7 @@ Run `vagrant up`
 To ssh into the manager node run `vagrant ssh manager`  
 To ssh into worker node run `vagrant ssh worker-1` or `vagrant ssh worker-2`  
 
-##Initialize Swarm manager  
+## Initialize Swarm manager  
 - ssh into manager node  
 - run `docker swarm init --advertise-addr <manager-IP-address>:2377`  
     IP address is of the Manager Virtual Machine. Can be found / setup in [Vagrantfile](Vagrantfile)  
@@ -40,7 +40,7 @@ To ssh into worker node run `vagrant ssh worker-1` or `vagrant ssh worker-2`
 - run `docker service create --name <service-name> --network <network-name> <image-name>`  
     Creates the service with the given service name on the network specified. This will basically run containers from the image name specified on the nodes connected to the swarm.
 
-##Scale up and down  
+## Scale up and down  
 
 - Scale up : `docker service update --replicas 7 <service-name>`    
    Replicates the container 7 times and balances into all available nodes based on a round-robin or any such algorithms. This will launch arbitrary number of containers in each node (including manager)  
@@ -51,7 +51,7 @@ To ssh into worker node run `vagrant ssh worker-1` or `vagrant ssh worker-2`
   This command will destroy some of the containers on some of the nodes. Check which containers got destroyed by using the commands specified above.  
 
 
-##Manage worker nodes  
+## Manage worker nodes  
 - Drain : Bring a node down for management purpose  
   `docker node update --availability drain <worker-node-id>`  
   <worker-node-id> can be found by running `docker node ls`  
@@ -61,7 +61,7 @@ To ssh into worker node run `vagrant ssh worker-1` or `vagrant ssh worker-2`
   `docker node update --availability active <worker-node-id>`  
   This will activate the drained node and will deploy further scaled up containers on this as well  
 
-##Helper commands  
+## Helper commands  
 - `docker service ls`  
    Lists the services created
 - `docker network ls`  
