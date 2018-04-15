@@ -3,7 +3,7 @@ FROM debian:stable-slim
 ENV FLASK_APP app.py
 
 RUN apt-get update && \
-    apt-get install -y python python-pip --no-install-recommends && \
+    apt-get install -y python python-pip --no-install-recommends python-setuptools && \
     pip install Flask
 
 ADD app /home/app/
