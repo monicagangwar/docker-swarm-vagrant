@@ -70,5 +70,3 @@ To ssh into worker node run `vagrant ssh worker-1` or `vagrant ssh worker-2`
    Lists all the nodes in swarm
 - `docker service ps <service-name>`  
    Lists all the containers running in all swarm nodes.
-
-
